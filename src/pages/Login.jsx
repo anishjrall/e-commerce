@@ -27,7 +27,8 @@ export default function Login() {
   };
 
   return (
-    <form onSubmit={handleSubmit}>
+    <div className="form-div">
+<form className="form-cont" onSubmit={handleSubmit}>
       <label>Username</label>
       <input value={username} onChange={(e) => setUsername(e.target.value)} />
       <br />
@@ -36,5 +37,7 @@ export default function Login() {
       <br />
       <button type="submit">Login</button>
     </form>
+    </div>
+    
   );
 }

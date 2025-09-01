@@ -11,10 +11,10 @@ export default function Signup() {
 
   const isLoggedIn = useSelector(state => state.user.isLoggedIn);
 
-  
+
   useEffect(() => {
     if (isLoggedIn) {
-      navigate("/"); 
+      navigate("/");
     }
   }, [isLoggedIn, navigate]);
 
@@ -26,14 +26,17 @@ export default function Signup() {
   };
 
   return (
-    <form onSubmit={handleSubmit}>
-      <label>Username</label>
-      <input value={username} onChange={(e) => setUsername(e.target.value)} />
-      <br />
-      <label>Password</label>
-      <input type="password" value={password} onChange={(e) => setPassword(e.target.value)} />
-      <br />
-      <button type="submit">Signup</button>
-    </form>
+    <div className="form-div">
+      <form className="form-cont" onSubmit={handleSubmit}>
+        <label>Username</label>
+        <input value={username} onChange={(e) => setUsername(e.target.value)} />
+        <br />
+        <label>Password</label>
+        <input type="password" value={password} onChange={(e) => setPassword(e.target.value)} />
+        <br />
+        <button type="submit">Signup</button>
+      </form>
+    </div>
+
   );
 }
