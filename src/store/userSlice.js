@@ -1,4 +1,5 @@
 import { createSlice } from "@reduxjs/toolkit";
+import { toast } from "react-toastify";
 const initialState = {
   user: null,     
   isLoggedIn: false,
@@ -31,7 +32,7 @@ const userSlice = createSlice({
       } else {
         state.user = null;
         state.isLoggedIn = false;
-        alert("Invalid username or password!");
+        toast.error("Invalid username or password!");
       }
     },
     logout: (state) => {

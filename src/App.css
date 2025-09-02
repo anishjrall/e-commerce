@@ -17,8 +17,13 @@
   position: sticky;
   top: 0;
   border-radius: 5px;
+  z-index: 2;
 }
-
+.product-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 6px 16px rgba(0,0,0,0.15);
+  z-index: 1;
+}
 .navbar .logo {
   font-size: 1.5rem;
   font-weight: bold;
@@ -27,6 +32,7 @@
 .nav-links {
   display: flex;
   gap: 24px;
+  cursor:pointer;
 }
 
 .nav-links a {
@@ -130,10 +136,7 @@
   gap: 10px;
 }
 
-.product-card:hover {
-  transform: translateY(-5px);
-  box-shadow: 0 6px 16px rgba(0,0,0,0.15);
-}
+
 
 .product-card img {
   height: 180px;
@@ -370,4 +373,35 @@
 }
 body{
   margin: 0px;
+}
+html, body, #root {
+  height: 100%;
+  margin: 0;
+}
+
+.app {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh; 
+}
+
+main {
+  flex: 1;
+}
+
+.footer {
+  background-color: #1f2937;
+  color: white;
+  text-align: center;
+  margin-top: auto; 
+}
+
+.footer .links a {
+  color: #fff;
+  text-decoration: none;
+  margin: 0 8px;
+}
+
+.footer .links a:hover {
+  text-decoration: underline;
 }

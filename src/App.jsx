@@ -9,20 +9,28 @@ import "./App.css";
 import ProductDetails from "./pages/ProductDetails";
 import { ToastContainer } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
+import Footer from "./components/Footer";
+
 export default function App() {
   return (
     <Router>
-      <Navbar />
+      <div className="app">
+        <Navbar />
 
-      <Routes>
-        <Route path="/" element={<Home />} />
-        <Route path="/login" element={<Login />} />
-        <Route path="/products" element={<Products />} />
-        <Route path="/signup" element={<Signup />} />
-        <Route path="/cart" element={<Cart />} />
-         <Route path="/product/:id" element={<ProductDetails />} />
-      </Routes>
-       <ToastContainer />
+        <main>
+          <Routes>
+            <Route path="/" element={<Home />} />
+            <Route path="/login" element={<Login />} />
+            <Route path="/products" element={<Products />} />
+            <Route path="/signup" element={<Signup />} />
+            <Route path="/cart" element={<Cart />} />
+            <Route path="/product/:id" element={<ProductDetails />} />
+          </Routes>
+        </main>
+
+        <ToastContainer />
+        <Footer />
+      </div>
     </Router>
   );
 }
